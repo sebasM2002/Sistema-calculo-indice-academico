@@ -46,5 +46,13 @@ namespace CalculoIndiceAcademico.Data
         public DbSet<CourseModel> Courses { get; set; }
         public DbSet<PreRequisiteModel> PreRequisites { get; set; }
         public DbSet<RoomModel> Rooms { get; set; }
+        public DbSet<CourseReportModel> CourseReport { get; set; }
+        public DbSet<CourseSectionRoomModel> CourseDetails { get; set; }
+        public DbSet<InqueriesModel> Inqueries { get; set; }
+        public DbSet<SectionModel> Sections { get; set; }
+        public DbSet<TeacherCourseModel> TeachersCourses { get; set; }
+        public DbSet<TrimesterModel> Trimesters { get; set; }
+        public DbSet<UserCareerModel> UsersCareer { get; set; }
+        public DbSet<UserInqueriesModel> userInqueries { get; set; }
     }
 }
