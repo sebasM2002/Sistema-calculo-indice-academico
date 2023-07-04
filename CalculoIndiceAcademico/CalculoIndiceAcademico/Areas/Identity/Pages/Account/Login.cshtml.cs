@@ -66,6 +66,7 @@ namespace CalculoIndiceAcademico.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [DataType(DataType.EmailAddress)]
             public string Email { get; set; }
 
             /// <summary>
