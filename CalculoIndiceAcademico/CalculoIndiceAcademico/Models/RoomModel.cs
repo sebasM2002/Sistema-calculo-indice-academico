@@ -8,9 +8,7 @@ namespace CalculoIndiceAcademico.Models
         [Key]
         public string RoomID { get; set; }
 
-        public int BuildingID { get; set; }
-        [ForeignKey("BuildingID")]
-        public BuildingModel BuildingModel { get; set; }
+        public string? Description { get; set; }
         
     }
 }

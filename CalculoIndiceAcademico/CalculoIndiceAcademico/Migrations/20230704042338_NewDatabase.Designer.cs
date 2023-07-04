@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CalculoIndiceAcademico.Data.Migrations
+namespace CalculoIndiceAcademico.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230703211701_UpdateDatabase")]
-    partial class UpdateDatabase
+    [Migration("20230704042338_NewDatabase")]
+    partial class NewDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -180,6 +180,80 @@ namespace CalculoIndiceAcademico.Data.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.CourseReportModel", b =>
+                {
+                    b.Property<string>("CourseID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("PeriodID")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("Grade")
+                        .HasColumnType("real");
+
+                    b.Property<string>("Letter")
+                        .HasColumnType("nvarchar(1)");
+
+                    b.Property<int>("Section")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseID", "UserID", "PeriodID");
+
+                    b.HasIndex("PeriodID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("CourseReport");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.InqueriesModel", b =>
+                {
+                    b.Property<int>("InqueryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InqueryID"), 1L, 1);
+
+                    b.Property<string>("InqueryDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InqueryTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InqueryType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("InqueryID");
+
+                    b.ToTable("Inqueries");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.PeriodModel", b =>
+                {
+                    b.Property<int>("semesterID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("semesterID"), 1L, 1);
+
+                    b.Property<string>("period")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("year")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("semesterID");
+
+                    b.ToTable("Trimesters");
+                });
+
             modelBuilder.Entity("CalculoIndiceAcademico.Models.PreRequisiteModel", b =>
                 {
                     b.Property<string>("CourseID")
@@ -193,22 +267,136 @@ namespace CalculoIndiceAcademico.Data.Migrations
                     b.ToTable("PreRequisites");
                 });
 
-            modelBuilder.Entity("CalculoIndiceAcademico.Models.RoomModel", b =>
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.RoomBuildingModel", b =>
                 {
-                    b.Property<int>("RoomID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomID"), 1L, 1);
+                    b.Property<string>("RoomID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BuildingID")
                         .HasColumnType("int");
 
-                    b.HasKey("RoomID");
+                    b.HasKey("RoomID", "BuildingID");
 
                     b.HasIndex("BuildingID");
 
+                    b.ToTable("RoomBuild");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.RoomModel", b =>
+                {
+                    b.Property<string>("RoomID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RoomID");
+
                     b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.ScheduleModel", b =>
+                {
+                    b.Property<int>("ScheduleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScheduleID"), 1L, 1);
+
+                    b.Property<TimeSpan?>("EndTime")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("StartTime")
+                        .HasColumnType("time");
+
+                    b.Property<string>("day")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ScheduleID");
+
+                    b.ToTable("Schedules");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.SectionModel", b =>
+                {
+                    b.Property<string>("CourseID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Section")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PeriodID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RoomID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ScheduleID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NumStudents")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TeacherID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("CourseID", "Section", "PeriodID", "RoomID", "ScheduleID");
+
+                    b.HasIndex("PeriodID");
+
+                    b.HasIndex("RoomID");
+
+                    b.HasIndex("ScheduleID");
+
+                    b.HasIndex("TeacherID");
+
+                    b.ToTable("Sections");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.TeacherCourseModel", b =>
+                {
+                    b.Property<string>("CourseID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("CourseID", "UserID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("TeachersCourses");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.UserCareerModel", b =>
+                {
+                    b.Property<string>("ID_Career")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ID_Career", "UserID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("UsersCareer");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.UserInqueriesModel", b =>
+                {
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("InqueryID")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserID", "InqueryID");
+
+                    b.HasIndex("InqueryID");
+
+                    b.ToTable("userInqueries");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -359,6 +547,33 @@ namespace CalculoIndiceAcademico.Data.Migrations
                     b.Navigation("CourseModel");
                 });
 
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.CourseReportModel", b =>
+                {
+                    b.HasOne("CalculoIndiceAcademico.Models.CourseModel", "CourseModel")
+                        .WithMany()
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.PeriodModel", "PeriodModel")
+                        .WithMany()
+                        .HasForeignKey("PeriodID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseModel");
+
+                    b.Navigation("PeriodModel");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CalculoIndiceAcademico.Models.PreRequisiteModel", b =>
                 {
                     b.HasOne("CalculoIndiceAcademico.Models.CourseModel", "CourseModel")
@@ -370,7 +585,7 @@ namespace CalculoIndiceAcademico.Data.Migrations
                     b.Navigation("CourseModel");
                 });
 
-            modelBuilder.Entity("CalculoIndiceAcademico.Models.RoomModel", b =>
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.RoomBuildingModel", b =>
                 {
                     b.HasOne("CalculoIndiceAcademico.Models.BuildingModel", "BuildingModel")
                         .WithMany()
@@ -378,7 +593,113 @@ namespace CalculoIndiceAcademico.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CalculoIndiceAcademico.Models.RoomModel", "RoomModel")
+                        .WithMany()
+                        .HasForeignKey("RoomID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("BuildingModel");
+
+                    b.Navigation("RoomModel");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.SectionModel", b =>
+                {
+                    b.HasOne("CalculoIndiceAcademico.Models.CourseModel", "courseModel")
+                        .WithMany()
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.PeriodModel", "PeriodModel")
+                        .WithMany()
+                        .HasForeignKey("PeriodID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.RoomModel", "RoomModel")
+                        .WithMany()
+                        .HasForeignKey("RoomID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.ScheduleModel", "ScheduleModel")
+                        .WithMany()
+                        .HasForeignKey("ScheduleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("TeacherID");
+
+                    b.Navigation("PeriodModel");
+
+                    b.Navigation("RoomModel");
+
+                    b.Navigation("ScheduleModel");
+
+                    b.Navigation("User");
+
+                    b.Navigation("courseModel");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.TeacherCourseModel", b =>
+                {
+                    b.HasOne("CalculoIndiceAcademico.Models.CourseModel", "CourseModel")
+                        .WithMany()
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseModel");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.UserCareerModel", b =>
+                {
+                    b.HasOne("CalculoIndiceAcademico.Models.CareerModel", "CareerModel")
+                        .WithMany()
+                        .HasForeignKey("ID_Career")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CareerModel");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CalculoIndiceAcademico.Models.UserInqueriesModel", b =>
+                {
+                    b.HasOne("CalculoIndiceAcademico.Models.InqueriesModel", "InqueriesModel")
+                        .WithMany()
+                        .HasForeignKey("InqueryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CalculoIndiceAcademico.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InqueriesModel");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
