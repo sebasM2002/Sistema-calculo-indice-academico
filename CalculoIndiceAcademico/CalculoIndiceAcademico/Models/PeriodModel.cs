@@ -3,12 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CalculoIndiceAcademico.Models
 {
-    public class TrimesterModel
+    public class PeriodModel
     {
         [Key]
         public int semesterID { get; set; }
 
         [Required]
-        public string semesterName { get; set; }
+        public string period { get; set; }
+
+        [Required]
+        public string year { get; set; }
     }
 }

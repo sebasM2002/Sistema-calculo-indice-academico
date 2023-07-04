@@ -32,11 +32,14 @@ namespace CalculoIndiceAcademico.Data
             modelBuilder.Entity<TeacherCourseModel>()
                         .HasKey(teaCo => new { teaCo.CourseID, teaCo.UserID });
 
-            modelBuilder.Entity<CourseSectionRoomModel>()
-                        .HasKey(csr => new { csr.CourseID, csr.SectionID, csr.RoomID, csr.TrimesterID, csr.year, csr.day });
-
             modelBuilder.Entity<CourseReportModel>()
-                        .HasKey(CoRepo => new { CoRepo.CourseID, CoRepo.UserID, CoRepo.TrimesterID, CoRepo.year });
+                        .HasKey(CoRepo => new { CoRepo.CourseID, CoRepo.UserID, CoRepo.PeriodID});
+
+            modelBuilder.Entity<SectionModel>()
+                        .HasKey(sec => new {sec.CourseID, sec.Section, sec.PeriodID, sec.RoomID, sec.ScheduleID });
+
+            modelBuilder.Entity<RoomBuildingModel>()
+                        .HasKey(RoomB => new { RoomB.RoomID, RoomB.BuildingID});
 
         }
 
@@ -46,12 +49,13 @@ namespace CalculoIndiceAcademico.Data
         public DbSet<CourseModel> Courses { get; set; }
         public DbSet<PreRequisiteModel> PreRequisites { get; set; }
         public DbSet<RoomModel> Rooms { get; set; }
+        public DbSet<RoomBuildingModel> RoomBuild { get; set; }
+        public DbSet<ScheduleModel> Schedules { get; set; }
         public DbSet<CourseReportModel> CourseReport { get; set; }
-        public DbSet<CourseSectionRoomModel> CourseDetails { get; set; }
         public DbSet<InqueriesModel> Inqueries { get; set; }
         public DbSet<SectionModel> Sections { get; set; }
         public DbSet<TeacherCourseModel> TeachersCourses { get; set; }
-        public DbSet<TrimesterModel> Trimesters { get; set; }
+        public DbSet<PeriodModel> Trimesters { get; set; }
         public DbSet<UserCareerModel> UsersCareer { get; set; }
         public DbSet<UserInqueriesModel> userInqueries { get; set; }
     }

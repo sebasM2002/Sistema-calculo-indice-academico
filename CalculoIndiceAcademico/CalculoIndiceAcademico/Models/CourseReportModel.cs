@@ -11,11 +11,9 @@ namespace CalculoIndiceAcademico.Models
         [ForeignKey("CourseID")]
         public CourseModel CourseModel { get; set; }
         public int Section { get; set; }
-        public int TrimesterID { get; set; }
-        [ForeignKey("TrimesterID")]
-        public TrimesterModel TrimesterModel { get; set; }
-
-        public string year { get; set; }
+        public int PeriodID{ get; set; }
+        [ForeignKey("PeriodID")]
+        public PeriodModel PeriodModel { get; set; }
         public float? Grade { get; set; }
         public char? Letter { get; set; }
 
