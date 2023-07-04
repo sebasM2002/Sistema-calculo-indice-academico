@@ -3,8 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CalculoIndiceAcademico.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser
     {
+        [Key]
+        public string UserID { get; set; }
 
         public byte[]? Image { get; set; } 
 
@@ -14,6 +16,8 @@ namespace CalculoIndiceAcademico.Models
         public int? GPA { get; set; }
 
         public int? NumTrimesters { get; set; }
+
+        public string EMail { get; set; }
 
         [Required]
         public char Gender { get; set; }

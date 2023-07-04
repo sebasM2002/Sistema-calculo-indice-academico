@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k1dN0w9tQpEgiAtciT6uJUplPVg9KaRMfAnBp7dxEb67t9qz45j6R5S9jkqgy0t4n0/zonuU/o9fJcVUgy5wlQ==",
+  "dgSpecHash": "cstUEEQ04LpEK5t/ilum7BTWuZu++dj6oLksAs2u/1baTDbJG67KaP6NbG9lWGOjGuyGLTM1ZxrCp41cn/JFpQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\CalculoIndiceAcademico.csproj",
   "expectedPackageFiles": [
@@ -81,9 +81,9 @@
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.diasymreader\\1.3.0\\microsoft.diasymreader.1.3.0.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.14\\microsoft.dotnet.scaffolding.shared.6.0.14.nupkg.sha512",
-    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.18\\microsoft.entityframeworkcore.6.0.18.nupkg.sha512",
-    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.18\\microsoft.entityframeworkcore.abstractions.6.0.18.nupkg.sha512",
-    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.18\\microsoft.entityframeworkcore.analyzers.6.0.18.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.19\\microsoft.entityframeworkcore.6.0.19.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.19\\microsoft.entityframeworkcore.abstractions.6.0.19.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.19\\microsoft.entityframeworkcore.analyzers.6.0.19.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.18\\microsoft.entityframeworkcore.design.6.0.18.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.18\\microsoft.entityframeworkcore.relational.6.0.18.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.18\\microsoft.entityframeworkcore.sqlserver.6.0.18.nupkg.sha512",
