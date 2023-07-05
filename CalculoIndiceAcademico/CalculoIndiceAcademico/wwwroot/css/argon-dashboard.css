@@ -23480,8 +23480,8 @@ hr.horizontal.gray-light {
 
 .navbar-vertical.bg-default .navbar-nav .nav-item .collapse .nav .nav-item.active .nav-link.active,
 .navbar-vertical.bg-default .navbar-nav .nav-item .collapsing .nav .nav-item.active .nav-link.active {
-  color: #fff;
-  opacity: 1;
+    color: #01BAEF;
+    opacity: 1;
 }
 
 .navbar-vertical.bg-default .navbar-nav .nav-item h6,

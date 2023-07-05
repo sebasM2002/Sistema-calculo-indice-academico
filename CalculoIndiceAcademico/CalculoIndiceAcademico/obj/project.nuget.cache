@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zzIe+ZJ+NpWPNPNg6LQWI0tM6N+NMTmDFa3c/aotucw6e+cKdBczymINGtYU1PyCVVE5J6/ae/hQbBdfjzUMhQ==",
+  "dgSpecHash": "LVYxfma87exCeEdxDXLUjlrqLCw5imlt62nUN/xsso9T6KQgrScIecW7f4FGzpCTMR35lMwUlvTU41iUcHnPnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\CalculoIndiceAcademico.csproj",
+  "projectFilePath": "C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\CalculoIndiceAcademico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sebas\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
