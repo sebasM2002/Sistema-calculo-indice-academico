@@ -9,11 +9,11 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CalculoIndiceAcademico
 build_property.RootNamespace = CalculoIndiceAcademico
-build_property.ProjectDir = C:\Users\sebas\Source\Repos\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico\
+build_property.ProjectDir = C:\Users\sebas\source\repos\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\sebas\Source\Repos\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico
+build_property.MSBuildProjectDirectory = C:\Users\sebas\source\repos\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/sebas/Source/Repos/Sistema-calculo-indice-academico/CalculoIndiceAcademico/CalculoIndiceAcademico/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
