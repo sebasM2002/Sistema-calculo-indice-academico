@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lDCN9VP9LO8y/bQafh4vm40PP3uaZwNOvKWpGtUaboc=",
+  "Hash": "daRhmeX5fYxuAFOJFCjHD95fImYQ3LQwu3oJyX1JwdE=",
   "Source": "CalculoIndiceAcademico",
   "BasePath": "_content/CalculoIndiceAcademico",
   "Mode": "Default",
@@ -1071,6 +1071,40 @@
       "OriginalItemSpec": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CalculoIndiceAcademico.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\BootswatchTheme.css",
+      "SourceId": "CalculoIndiceAcademico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\",
+      "BasePath": "_content/CalculoIndiceAcademico",
+      "RelativePath": "css/BootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BootswatchTheme.css"
+    },
+    {
+      "Identity": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\LogIn.css",
+      "SourceId": "CalculoIndiceAcademico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\",
+      "BasePath": "_content/CalculoIndiceAcademico",
+      "RelativePath": "css/LogIn.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\LogIn.css"
+    },
+    {
       "Identity": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\site.css",
       "SourceId": "CalculoIndiceAcademico",
       "SourceType": "Discovered",
@@ -1103,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\Images\\Studying.jpeg",
+      "SourceId": "CalculoIndiceAcademico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\",
+      "BasePath": "_content/CalculoIndiceAcademico",
+      "RelativePath": "Images/Studying.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Studying.jpeg"
     },
     {
       "Identity": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\js\\site.js",

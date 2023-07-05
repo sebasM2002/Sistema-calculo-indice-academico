@@ -1,10 +1,12 @@
 ﻿using CalculoIndiceAcademico.Data;
 using CalculoIndiceAcademico.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace CalculoIndiceAcademico.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

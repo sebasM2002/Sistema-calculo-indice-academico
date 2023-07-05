@@ -514,3 +514,4 @@ C:\Users\sebas\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIn
 C:\Users\sebas\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico\obj\Debug\net6.0\CalculoIndiceAcademico.pdb
 C:\Users\sebas\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico\obj\Debug\net6.0\CalculoIndiceAcademico.genruntimeconfig.cache
 C:\Users\sebas\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico\obj\Debug\net6.0\ref\CalculoIndiceAcademico.dll
+C:\Users\sebas\Sistema-calculo-indice-academico\CalculoIndiceAcademico\CalculoIndiceAcademico\obj\Debug\net6.0\scopedcss\Areas\Identity\Pages\Account\_Layout.cshtml.rz.scp.css

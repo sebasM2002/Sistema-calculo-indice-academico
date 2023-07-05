@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\CalculoIndiceAcademico.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\Images\\Studying.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Studying.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\BootswatchTheme.css",
+      "PackagePath": "staticwebassets\\css\\BootswatchTheme.css"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\LogIn.css",
+      "PackagePath": "staticwebassets\\css\\LogIn.css"
+    },
+    {
       "Id": "C:\\Users\\sebas\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

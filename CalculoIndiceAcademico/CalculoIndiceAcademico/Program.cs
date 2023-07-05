@@ -1,4 +1,5 @@
 using CalculoIndiceAcademico.Data;
+using CalculoIndiceAcademico.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +15,13 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
+
+
+
+builder.Services.AddAuthorization();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
