@@ -30,10 +30,9 @@
                                         <input asp-for="Input.Email" id="exampleInputEmail1" class="form-control" aria-describedby="emailHelp" placeholder="Correo electrónico" />
                                     </div>
 
-                                    <div class="form-outline mb-1">
-                                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Contraseña" />
-                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
-                                        <i class="bi bi-eye-slash" id="togglePassword" style="position:absolute; top:47%; left:41%"></i>
+                                    <div class="form-outline mb-1 position-relative">
+                                        <input asp-for="Input.Password" class="form-control position-relative" autocomplete="current-password" aria-required="true" placeholder="Contraseña" />
+                                        <span asp-validation-for="Input.Password" class="text-danger position-relative"></span>
                                     </div>
 
                                     <div class="form-check">
