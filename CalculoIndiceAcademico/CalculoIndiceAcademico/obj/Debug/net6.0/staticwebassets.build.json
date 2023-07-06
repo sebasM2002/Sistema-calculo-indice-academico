@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DxSf7+eABwhFm2PJwudIXwbrkgiER9CzK8nIzu1lVG4=",
+  "Hash": "SjbPOOYEOO2lI6yYOmI8k4+lf2FNaZw1x8dp+PEil/c=",
   "Source": "CalculoIndiceAcademico",
   "BasePath": "_content/CalculoIndiceAcademico",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\nucleo-svg.css"
+    },
+    {
+      "Identity": "C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\rgistro.css",
+      "SourceId": "CalculoIndiceAcademico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\",
+      "BasePath": "_content/CalculoIndiceAcademico",
+      "RelativePath": "css/rgistro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\rgistro.css"
     },
     {
       "Identity": "C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\site.css",

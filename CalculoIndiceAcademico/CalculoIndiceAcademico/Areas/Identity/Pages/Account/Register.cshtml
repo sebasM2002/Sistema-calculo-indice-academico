@@ -3,11 +3,98 @@
 @{
     ViewData["Title"] = "Register";
 }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<h1>@ViewData["Title"]</h1>
+<div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-5" style="background-color:#0B4F6C; border-radius: 10px; box-shadow: 5px 10px 10px black">
+            <h1 class="d-flex justify-content-center mt-5" style="color:white">Registra un nuevo Usuario</h1>
+            <div class="card-body">
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
 
-<div class="row">
-    <div class="col-md-4">
+                <span class="ms-2" style="color:white">Rol del Usuario</span>
+                <div class="dropdown mb-3">
+                    <select id="myDropdown" onchange="updateValue()">
+                        <option><button class="dropdown-item" type="button">Estudiante</button></option>
+                        <option> <button class="dropdown-item" type="button">Docente</button></option>
+                        <option><button class="dropdown-item" type="button">Coordinador</button></option>
+                        <option><button class="dropdown-item" type="button">Administrador</button></option>
+                    </select>
+
+                    <script>
+                        function updateValue() {
+                            var dropdown = document.getElementById("myDropdown");
+                            var selectedValue = dropdown.value;
+                            console.log("Selected value: " + selectedValue);
+                            // Perform additional actions based on the selected value
+                        }
+                    </script>
+                </div>
+
+                <hr style="background-color:white"/>
+                <h4><span class="ms-2 mb-3" style="color:white">Nombre Completo</span></h4>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+                        </div>
+                    </div>
+                <div class="mb-3">
+                    <span class="ms-2" style="color:white">Cédula</span>
+                    <input type="text" class="form-control" placeholder="000-000000000-0" aria-label="Email">
+                </div>
+
+                <div class="mb-3">
+                    <span class="ms-2" style="color:white">Número de Celular</span>
+                    <input type="text" class="form-control" placeholder="(###)-###-####" aria-label="Email">
+                </div>
+
+                <div class="dropdown mb-3">
+                    <div class="ms-2" style="color:white">Area Académica</div>
+                    <select id="AreaAcademica" onchange="updateValue()">
+                        <option><button class="dropdown-item" type="button">Estudiante</button></option>
+                        <option> <button class="dropdown-item" type="button">Docente</button></option>
+                        <option><button class="dropdown-item" type="button">Coordinador</button></option>
+                        <option><button class="dropdown-item" type="button">Administrador</button></option>
+                    </select>
+                </div>
+
+                <div class="dropdown mb-3">
+                    <div class="ms-2" style="color:white"> Carrera</div>
+                        <div class="ms-2 float-end"></div>
+                        <select id="AreaAcademica" onchange="updateValue()">
+                            <option><button class="dropdown-item" type="button">Estudiante</button></option>
+                            <option> <button class="dropdown-item" type="button">Docente</button></option>
+                            <option><button class="dropdown-item" type="button">Coordinador</button></option>
+                            <option><button class="dropdown-item" type="button">Administrador</button></option>
+                        </select>
+
+                        <div class="ms-2 float-end"></div>
+                        <select id="AreaAcademica" onchange="updateValue()">
+                            <option><button class="dropdown-item" type="button">Estudiante</button></option>
+                            <option> <button class="dropdown-item" type="button">Docente</button></option>
+                            <option><button class="dropdown-item" type="button">Coordinador</button></option>
+                            <option><button class="dropdown-item" type="button">Administrador</button></option>
+                        </select>
+
+                        <div class="ms-2 float-end"></div>
+                        <select id="AreaAcademica" onchange="updateValue()">
+                            <option><button class="dropdown-item" type="button">Estudiante</button></option>
+                            <option> <button class="dropdown-item" type="button">Docente</button></option>
+                            <option><button class="dropdown-item" type="button">Coordinador</button></option>
+                            <option><button class="dropdown-item" type="button">Administrador</button></option>
+                        </select>
+                    
+                </div>
+                    <div class="text-center mt-5" stlye="height:100px">
+                    <a asp-area="" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-primary me-3 mb-5" style="width:30%; height:50px; border-radius: 10px; background-color: #01BAEF">Crear Cuenta</button></a>
+                    <a asp-area="" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-outline-danger mb-5" style="width:30%; height:50px; border-radius: 10px">Cancelar</button></a>
+                    </div>
+                </form>
+            </div>
+     </div>
+</div>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
             <hr />
@@ -60,8 +147,8 @@
             }
         </section>
     </div>
-</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

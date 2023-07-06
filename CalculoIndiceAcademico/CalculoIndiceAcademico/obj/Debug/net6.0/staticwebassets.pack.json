@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\css\\nucleo-svg.css"
     },
     {
+      "Id": "C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\rgistro.css",
+      "PackagePath": "staticwebassets\\css\\rgistro.css"
+    },
+    {
       "Id": "C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
