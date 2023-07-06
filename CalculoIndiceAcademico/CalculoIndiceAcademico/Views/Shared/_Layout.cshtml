@@ -45,61 +45,83 @@
                        <i class="bi bi-clipboard-data"></i>Dashboard
                     </a>
                 </li>
- 
+                @*
+                Estudiante
+                *@
+
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/tables.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Tables</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-binoculars-fill"></i>Ver Asignaturas
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/billing.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Billing</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-bar-chart-fill"></i>Reporte de Notas
                     </a>
                 </li> 
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/virtual-reality.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-app text-info text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-gear-wide-connected"></i>Modificar Asignaturas
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/rtl.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">RTL</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-journals"></i>Notas Trimestral
+                    </a>
+                </li>
+                @*
+                Docente
+                *@
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-calendar-event"></i>Mis Asignaturas
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/profile.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Profile</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-plus-slash-minus"></i>Calificar Estudiantes
                     </a>
                 </li>
+
+                @*
+                Administrador
+                *@
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/sign-in.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Sign In</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-person-add"></i>Crear Usuario
                     </a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link " href="../pages/sign-up.html">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-collection text-info text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Sign Up</span>
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-person-fill-gear"></i>Administar Usuario
+                    </a>
+                </li>
+
+                @*
+                Coordinador
+                *@
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-mortarboard-fill"></i>Estudiantes
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-person-badge"></i>Inscribir Docente
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-folder-plus"></i>Crear Nuevas Asignaturas
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="bi bi-house-gear-fill"></i>Manejo de Secciones
                     </a>
                 </li>
             </ul>
