@@ -1,0 +1,39 @@
+﻿@model CourseModel
+
+<form method="post" asp-action="DeletePOST">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Eliminar Asignatura</h2>
+            <hr />
+        </div>
+        @*<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="CourseID">.</label>
+            <input asp-for="CourseID" hidden class="form-plaintext" />
+            <span asp-validation-for="CourseID" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CourseName">Nombre</label>
+            <input asp-for="CourseName" disabled class="form-control" />
+            <span asp-validation-for="CourseName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Credits">Creditos</label>
+            <input asp-for="Credits" disabled class="form-control" />
+            <span asp-validation-for="Credits" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">
+            Eliminar
+        </button>
+        <a asp-controller="Course" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Regresar
+        </a>
+    </div>
+    
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
