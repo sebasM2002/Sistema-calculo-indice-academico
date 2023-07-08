@@ -1,0 +1,42 @@
+﻿@model InqueriesModel
+
+<form method="post">
+    <div class="border p-3 mt-4" >
+        <div class="row pb-2">
+            <h2 stlye="color:#040F16">Crear Reporte</h2>
+            <hr />
+        </div>
+        @*<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="InqueryTitle">Titulo</label>
+            <input asp-for="InqueryTitle" class="form-control" />
+            <span asp-validation-for="InqueryTitle" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="InqueryType">Tipo</label>
+            <select asp-for="InqueryType" class="form-control">
+                <option value="Ayuda">Pedir Ayuda</option>
+                <option value="Error">Reportar Error</option>
+            </select>
+            <span asp-validation-for="InqueryType" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="InqueryDescription">Descripcion</label>
+            <textarea asp-for="InqueryDescription" class="form-control" style="height: 400px;"></textarea>
+            <span asp-validation-for="InqueryDescription" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:200px; color:#FBFBFF; background-color:#0B4F6C">
+            Crear
+        </button>
+        <a asp-controller="Home" asp-action="Index">
+            <button type="button" class ="btn btn-outline-danger" style="width:150px">Regresar</button>
+            
+        </a>
+    </div>
+
+</form>
+
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}

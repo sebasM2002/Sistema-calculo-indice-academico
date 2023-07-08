@@ -79,6 +79,47 @@ namespace CalculoIndiceAcademico.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Role")]
+            public string Role { get; set; }
+
+            [Required]
+            [DataType(DataType.PhoneNumber)]
+            [Display(Name = "Numero de Celular")]
+            public int CelNum { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Nombre")]
+            public string Nombre{ get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Edad")]
+            public int Edad { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Apellido")]
+            public string Apellido { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Cedula")]
+            public int Cedula { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Area Academica")]
+            public string AreaAcademica { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Carrera")]
+            public string Carrera { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.

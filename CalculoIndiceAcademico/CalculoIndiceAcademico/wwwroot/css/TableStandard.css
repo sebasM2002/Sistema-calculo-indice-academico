@@ -1,0 +1,84 @@
+﻿.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #FFF;
+}
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+
+.container th {
+    background-color: #040F16;
+    color: #FBFBFF;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+.container td {
+    padding-left: 2%;
+}
+}
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+    background-color: #D9D9D9;
+    color: #040F16;
+}
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+    background-color: #0B4F6C;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .container td:nth-child(4),
+    .container th:nth-child(4) {
+        display: none;
+    }
+}
+th:first-child {
+  border-top-left-radius: 10px;
+}
+th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.btn-primary {
+    color: #FBFBFF;
+    background-color: #0B4F6C
+}
+
+.btn-primary:hover {
+    color: #FBFBFF;
+    background-color: #01BAEF;
+}
+tr .btn-primary {
+    color: #FBFBFF;
+    background-color: #01BAEF;
+}
+tr:nth-child(even) .btn-primary:hover{
+    color: #0B4F6C;
+    background-color: #FBFBFF;
+}
+tr:nth-child(odd) .btn-primary:hover {
+    color: #FBFBFF;
+    background-color: #0B4F6C;
+}
+
+.btn-danger {
+    background-color: #B80C09
+}
