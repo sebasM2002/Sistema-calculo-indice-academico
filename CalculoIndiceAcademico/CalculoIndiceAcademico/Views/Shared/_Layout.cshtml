@@ -80,8 +80,13 @@
                 Administrador
                 *@
                 <li class="nav-item">
+                    <a href="@Url.Action("Index", "Career")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Career"  ? "active" : "")">
+                        <i class="bi bi-apple"></i>Administrar Carreras
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-person-add"></i>Crear Usuario
+                        <i class="bi bi-bank"></i>Administrar Areas Académicas
                     </a>
                 </li>
                 

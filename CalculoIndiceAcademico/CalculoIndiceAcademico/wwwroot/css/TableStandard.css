@@ -1,4 +1,9 @@
-﻿.container th h1 {
+﻿
+h2 {
+    color: #0B4F6C;
+}
+
+.container th h1 {
     font-weight: bold;
     font-size: 1em;
     text-align: left;
@@ -25,7 +30,7 @@
 .container td {
     padding-left: 2%;
 }
-}
+
 /* Background-color of the odd rows */
 .container tr:nth-child(odd) {
     background-color: #D9D9D9;
@@ -81,4 +86,19 @@ tr:nth-child(odd) .btn-primary:hover {
 
 .btn-danger {
     background-color: #B80C09
+}
+
+
+
+#myInput {
+    background-image: url('/Images/search.svg'); /* Add a search icon to input */
+    background-position: left;
+    background-position-x: 5%; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 50%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid #040F16;
+    border-radius: 15px; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
 }

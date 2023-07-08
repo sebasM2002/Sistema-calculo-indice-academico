@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Images\\Studying.jpeg"
     },
     {
+      "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\Images\\search.svg",
+      "PackagePath": "staticwebassets\\Images\\search.svg"
+    },
+    {
       "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\BootswatchTheme.css",
       "PackagePath": "staticwebassets\\css\\BootswatchTheme.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\LogIn.css",
       "PackagePath": "staticwebassets\\css\\LogIn.css"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\TableNoIcons.css",
+      "PackagePath": "staticwebassets\\css\\TableNoIcons.css"
     },
     {
       "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\TableStandard.css",
@@ -47,6 +55,10 @@
     {
       "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\js\\SearchBar.js",
+      "PackagePath": "staticwebassets\\js\\SearchBar.js"
     },
     {
       "Id": "C:\\Users\\sebas\\source\\repos\\Sistema-calculo-indice-academico\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\js\\site.js",

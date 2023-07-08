@@ -3,19 +3,26 @@
     ViewData["Title"] = "Index";
 }
 
-
+<link href="~/css/TableStandard.css" rel="stylesheet">
+<link href="~/css/TableNoIcons.css" rel="stylesheet">
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Carreras</h2>
-        </div>
-        <div class="col-6 text-end">
-            <a asp-controller="Career" asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> &nbsp; Agregar Carrera
-            </a>
+            <h2 style="color:#0B4F6C">Carreras</h2>
         </div>
     </div>
 </div>
+<div class="row pt-4">
+    <div class="col-6">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por Clave ">
+    </div>
+    <div class="text-end col-6 ">
+        <a asp-controller="Career" asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> &nbsp; Agregar Carrera
+        </a>
+    </div>
+</div>
+
 
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
@@ -25,7 +32,7 @@
             </th>
             <th>
                 Nombre
-            </th>   
+            </th> 
         </tr>
     </thead>
     <tbody>
@@ -39,6 +46,9 @@
                     @obj.Career
                 </td>
             </tr>
+
         }
     </tbody>
 </table>
+<script src="~/js/SearchBar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
