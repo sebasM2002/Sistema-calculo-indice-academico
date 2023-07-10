@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.Data.SqlClient;
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 <html lang="en">
@@ -15,6 +16,35 @@
     <link rel="stylesheet" href="~/css/argon-dashboard.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+@{
+    SqlConnection connection2 = new SqlConnection();
+    connection2.ConnectionString = "Server=ROMAN\\SQLEXPRESS;Database=aspnet-CalculoIndiceAcademico-6105572f-b1d8-4855-9c87-d6a125b92b4b;Trusted_Connection=True;MultipleActiveResultSets=true";
+    connection2.Open();
+    SqlCommand command2 = new SqlCommand();
+    command2.Connection = connection2;
+    List<APUser> userList = new List<APUser>();
+    command2.CommandText = "select * from Peoples";
+    SqlDataReader reader2 = command2.ExecuteReader();
+    while (reader2.Read())
+    {
+        var obj = new APUser();
+        obj.EMail = $"{reader2["EMail"]}";
+        obj.Role =  $"{reader2["Role"]}";
+        userList.Add(obj);
+    }
+    //reader2.Close();
+    string validacion = "";
+    string validacion2 = User.Identity?.Name!;
+    foreach (var usuario in userList)
+    {
+        if (usuario.EMail == validacion2)
+        {
+            validacion = usuario.Role;
+        }
+    }
+    reader2.Close();
+}
+
 <div class="min-height-100 position-static w-100" style="background-color: #0B4F6C"></div>
 <header class="g-sidenav-show bg-gray-100 position-sticky"> 
     <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
@@ -30,7 +60,7 @@
                @if (SignInManager.IsSignedIn(User))
                {
                     <li class="nav-item">
-                        <h2 class="text-center"><a class="nav-link text-dark" style="color:black" title="Manage"> Hola @User.Identity?.Name!</a></h2>
+                        <h2 class="text-center"><a class="nav-link text-dark" style="color:black" title="Manage"> hola @validacion Hola @User.Identity?.Name!</a></h2>
                     </li>
                }
                 <li class="nav-item">
@@ -38,90 +68,107 @@
                        <i class="bi bi-clipboard-data"></i>Dashboard
                     </a>
                 </li>
+              
                 @*
                 Estudiante
                 *@
-
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-binoculars-fill"></i>Ver Asignaturas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-bar-chart-fill"></i>Reporte de Notas
-                    </a>
-                </li> 
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-gear-wide-connected"></i>Modificar Asignaturas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-journals"></i>Notas Trimestral
-                    </a>
-                </li>
+                @if(validacion == "Estudiante")
+                {
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-binoculars-fill"></i>Ver Asignaturas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-bar-chart-fill"></i>Reporte de Notas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-gear-wide-connected"></i>Modificar Asignaturas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-journals"></i>Notas Trimestral
+                        </a>
+                    </li>
+                }
                 @*
                 Docente
                 *@
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-calendar-event"></i>Mis Asignaturas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-plus-slash-minus"></i>Calificar Estudiantes
-                    </a>
-                </li>
-
+                @if (validacion == "Profesor")
+                {
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-calendar-event"></i>Mis Asignaturas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-plus-slash-minus"></i>Calificar Estudiantes
+                        </a>
+                    </li>
+                }
                 @*
                 Administrador
                 *@
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Career")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Career"  ? "active" : "")">
-                        <i class="bi bi-apple"></i>Administrar Carreras
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-bank"></i>Administrar Areas Académicas
-                    </a>
-                </li>
+                    
+                @if (validacion == "Administrador")
+                {
+                    <li class="nav-item">
+                        <a href="@Url.Action("Register", "ApplicationUser")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Course" ? "active" : "")">
+                            <i class="bi bi-mortarboard-fill"></i>Crear Usuarios
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Career")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Career"  ? "active" : "")">
+                            <i class="bi bi-apple"></i>Administrar Carreras
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-bank"></i>Administrar Areas Académicas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-person-fill-gear"></i>Administar Usuario
+                        </a>
+                    </li>
+                }
+
                 
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-person-fill-gear"></i>Administar Usuario
-                    </a>
-                </li>
 
                 @*
                 Coordinador
                 *@
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-mortarboard-fill"></i>Estudiantes
-                    </a>
-                </li>
 
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-person-badge"></i>Inscribir Docente
-                    </a>
-                </li>
+                @if (validacion == "Coordinador")
+                {
 
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Course")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Course" ? "active" : "")">
-                        <i class="bi bi-folder-plus"></i>Ver Asignaturas Creadas
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-person-badge"></i>Inscribir Docente
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
-                        <i class="bi bi-house-gear-fill"></i>Manejo de Secciones
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Course")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Course" ? "active" : "")">
+                            <i class="bi bi-folder-plus"></i>Ver Asignaturas Creadas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                            <i class="bi bi-house-gear-fill"></i>Manejo de Secciones
+                        </a>
+                    </li>
+                }
+                
             </ul>
         </div>
 

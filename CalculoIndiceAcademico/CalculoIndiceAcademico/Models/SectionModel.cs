@@ -13,7 +13,7 @@ namespace CalculoIndiceAcademico.Models
         public PeriodModel PeriodModel { get; set; }
         public string? TeacherID { get; set; }
         [ForeignKey("TeacherID")]
-        public ApplicationUser User { get; set; }
+        public APUser User { get; set; }
 
         public int? NumStudents { get; set; }
 

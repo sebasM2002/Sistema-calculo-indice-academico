@@ -42,7 +42,8 @@ namespace CalculoIndiceAcademico.Data
                         .HasKey(RoomB => new { RoomB.RoomID, RoomB.BuildingID});
 
         }
-
+        public DbSet<APUser> Peoples { get; set; }
+        public DbSet<Table_1> Tables { get; set; }
         public DbSet<BuildingModel> Buildings{ get; set; }
         public DbSet<CareerModel> Careers { get; set; }
         public DbSet<CoRequisiteModel> coRequisites { get; set; }
@@ -58,5 +59,9 @@ namespace CalculoIndiceAcademico.Data
         public DbSet<PeriodModel> Trimesters { get; set; }
         public DbSet<UserCareerModel> UsersCareer { get; set; }
         public DbSet<UserInqueriesModel> userInqueries { get; set; }
+        public DbSet<ApplicationUserModel> ApplicationUsers { get; set; }
+        public DbSet<NamesModel> Names { get; set; }
+        public DbSet<RolModel> Rol { get; set; }
+
     }
 }

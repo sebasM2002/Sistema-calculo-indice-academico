@@ -6,7 +6,7 @@ namespace CalculoIndiceAcademico.Models
     {
         public string UserID { get; set; }
         [ForeignKey("UserID")]
-        public ApplicationUser User { get; set; }
+        public APUser User { get; set; }
         public string CourseID { get; set; }
         [ForeignKey("CourseID")]
         public CourseModel CourseModel { get; set; }

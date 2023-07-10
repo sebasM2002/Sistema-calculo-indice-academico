@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CalculoIndiceAcademico",
+    "\\CalculoIndiceAcademico\\CalculoIndiceAcademico",
+    "\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot",
+    "\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css"
   ],
-  "SelectedNode": "\\C:\\Users\\sebas\\Source\\Repos\\Sistema-calculo-indice-academico",
+  "SelectedNode": "\\CalculoIndiceAcademico\\CalculoIndiceAcademico\\wwwroot\\css\\TableNoIcons.css",
   "PreviewInSolutionExplorer": false
 }
